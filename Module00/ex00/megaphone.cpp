@@ -6,13 +6,13 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:44:16 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/04 12:42:50 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:17:21 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-char	*meg_toupper(char *s)
+std::string	meg_toupper(std::string s)
 {
 	int	i;
 
@@ -27,19 +27,21 @@ char	*meg_toupper(char *s)
 
 int	main(int argc, char **argv)
 {
-	int	i;
+	int			i;
+	std::string	s;
 
 	i = 1;
 	if (argc > 1)
 	{
 		while (argv[i])
 		{
-			std::cout << meg_toupper(argv[i]);
+			s = argv[i];
+			std::cout << meg_toupper(s);
 			i++;
 		}
 		std::cout << std::endl;
 	}
-	else
+	else 
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 	return (0);
 }
