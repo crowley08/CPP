@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:43:40 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/07 17:11:29 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:18:02 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ void	printChartHead(void)
 	std::cout << "├──────────┼──────────┼──────────┼──────────┼──────────┤" << std::endl;
 }
 
+void	printContactAttributes(Contact *contact)
+{
+	std::cout << "│" << std::setw(10) << std::right << contact->getIndex();;
+    std::cout << "│" << std::setw(10) << std::right << contact->getFirstName();
+    std::cout << "│" << std::setw(10) << std::right << contact->getLastName();
+    std::cout << "│" << std::setw(10) << std::right << contact->getNickName();
+    std::cout << "│" << std::setw(10) << std::right << contact->getPhoneNumber() << "|" << std::endl;
+	std::cout << "└──────────┴──────────┴──────────┴──────────┴──────────┘" << std::endl;
+}
+
 void	printContact(PhoneBook *book)
 {
 	int		index;	
@@ -55,18 +65,19 @@ void	printContact(PhoneBook *book)
 
 	index = 0;
 	count = book->getCount();
+	if (count == 0)
+	{
+		std::cout << "There is no contact in your repertory" << std::endl;
+		std::cout << "type [ADD] to add contact" << std::endl;
+		return ;
+	}
 	printChartHead();
 	while (index < book->getCount())
 	{	
 		contact = book->getContact(index);
 		contact.setIndex(index + 1);
-    	std::cout << "│" << std::setw(10) << std::right << contact.getIndex();;
-    	std::cout << "│" << std::setw(10) << std::right << contact.getFirstName();
-    	std::cout << "│" << std::setw(10) << std::right << contact.getLastName();
-    	std::cout << "│" << std::setw(10) << std::right << contact.getNickName();
-    	std::cout << "│" << std::setw(10) << std::right << contact.getPhoneNumber() << "|" << std::endl;
-		std::cout << "└──────────┴──────────┴──────────┴──────────┴──────────┘" << std::endl;
-		index++;
+		printContactAttributes(&contact);
+ 		index++;
 	}
 	if (count > 0)
 	{

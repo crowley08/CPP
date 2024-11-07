@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:33:13 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/07 16:10:54 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:17:55 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 void	addContact(PhoneBook *book);
 void	printContact(PhoneBook *book);
 void	printChartHead(void);
+void	printContactAttributes(Contact *contact);
 
 #endif
