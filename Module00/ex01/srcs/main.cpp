@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:43:40 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/07 17:18:02 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/07 17:35:05 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ int main(void)
 	{
 		std::cout << "$> ";
 		std::getline(std::cin, str);
+		if (str.empty())
+			continue ;
 		if (str.compare("ADD") == 0)
 			addContact(&phonebook);
 		else if (str.compare("SEARCH") == 0)
