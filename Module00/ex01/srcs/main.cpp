@@ -6,67 +6,48 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:43:40 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 11:30:13 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:03:56 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.hpp"
 
-void	addContact(PhoneBook *book)
+std::string	trunc(std::string str)
 {
-	std::string	str;
-	Contact    	contact;
-
-
-	std::cout << "	Enter first name : ";
-	std::getline(std::cin, str);
-	contact.setFirstName(str);
-	std::cout << "	Enter last name : ";
-	std::getline(std::cin, str);
-	contact.setLastName(str);
-	std::cout << "	Enter nickname : ";
-	std::getline(std::cin, str);
-	contact.setNickName(str);
-	std::cout << "	Enter phone number : ";
-	std::getline(std::cin, str);
-	contact.setPhoneNumber(str);
-	std::cout << "	Enter darkest secret : ";
-	std::getline(std::cin, str);
-	contact.setSecret(str);
-	book->setContact(contact);
+	if (str.size() >= 10)
+		str = str.substr(0, 9) + ".";
+	return (str);
 }
 
 void	printChartHead(void)
 {
-	std::cout << "┌──────────┬──────────┬──────────┬──────────┬──────────┐" << std::endl;
+	std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
 	std::cout << "│" << std::setw(10) << std::right << "index";
 	std::cout << "│" << std::setw(10) << std::right << "first name";
 	std::cout << "│" << std::setw(10) << std::right << "last name";
-	std::cout << "│" << std::setw(10) << std::right << "nickname";
-	std::cout << "│" << std::setw(10) << std::right << "phone" << "│" << std::endl;
-	std::cout << "├──────────┼──────────┼──────────┼──────────┼──────────┤" << std::endl;
+	std::cout << "│" << std::setw(10) << std::right << "nickname" << "│" << std::endl;;
+	std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
 }
 
 void	printContactAttributes(Contact *contact)
 {
-	std::cout << "│" << std::setw(10) << std::right << contact->getIndex();;
-    std::cout << "│" << std::setw(10) << std::right << contact->getFirstName();
-    std::cout << "│" << std::setw(10) << std::right << contact->getLastName();
-    std::cout << "│" << std::setw(10) << std::right << contact->getNickName();
-    std::cout << "│" << std::setw(10) << std::right << contact->getPhoneNumber() << "|" << std::endl;
-	std::cout << "└──────────┴──────────┴──────────┴──────────┴──────────┘" << std::endl;
+	std::cout << "│" << std::setw(10) << std::right << contact->getIndex();
+    std::cout << "│" << std::setw(10) << std::right << trunc(contact->getFirstName());
+    std::cout << "│" << std::setw(10) << std::right << trunc(contact->getLastName());
+    std::cout << "│" << std::setw(10) << std::right << trunc(contact->getNickName()) << "|" << std::endl;;
+	std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 }
 
-void	printChart(PhoneBook *book)
+void	printChart(PhoneBook *repertory)
 {
 	Contact	contact;
 	int	index;
 
 	index = 0;
 	printChartHead();
-	while (index < book->getCount())
+	while (index < repertory->getCount())
 	{	
-		contact = book->getContact(index);
+		contact = repertory->getContact(index);
 		contact.setIndex(index + 1);
 		printContactAttributes(&contact);
  		index++;
@@ -75,7 +56,7 @@ void	printChart(PhoneBook *book)
 
 int main(void)
 {
-	PhoneBook	phonebook;
+	PhoneBook	repertory;
 	std::string	str;
 
 	std::cout << "Command info: " << std::endl;
@@ -90,10 +71,11 @@ int main(void)
 		if (str.empty())
 			continue ;
 		if (str.compare("ADD") == 0)
-			addContact(&phonebook);
+			addContact(&repertory);
 		else if (str.compare("SEARCH") == 0)
 		{
-			printContact(&phonebook);
+			printContact(&repertory);void	printSearchChartHead(void);
+
 		}
 		else if (str.compare("EXIT") == 0)
 		    break ;
