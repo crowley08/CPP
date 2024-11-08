@@ -6,13 +6,13 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:16:28 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:01:19 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:37:00 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.hpp"
 
-void	printSearchContactAttributes(Contact *contact)
+void	printSearchContactAttributes( Contact *contact )
 {
 	std::cout << "	First name - " << contact->getFirstName() << std::endl;
     std::cout << "	Last name - " << contact->getLastName() << std::endl;
@@ -22,7 +22,7 @@ void	printSearchContactAttributes(Contact *contact)
 	std::cout << std::endl;
 }
 
-Contact	searchContact(PhoneBook *book, int i)
+Contact	searchContact( PhoneBook *book, int i )
 {
 	Contact	tmp;
 
@@ -33,7 +33,7 @@ Contact	searchContact(PhoneBook *book, int i)
 	return (tmp);
 }
 
-void	printContact(PhoneBook *book)
+void	printContact( PhoneBook *book )
 {
 	int		count;
 	Contact	tmp;

@@ -6,13 +6,13 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:30:23 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:08:44 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:34:25 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.hpp"
 
-static void	enterFirstName(Contact *contact)
+static void	enterFirstName( Contact *contact )
 {
 	std::string	str;
 
@@ -26,7 +26,7 @@ static void	enterFirstName(Contact *contact)
 	contact->setFirstName(str);
 }
 
-static void	enterLastName(Contact *contact)
+static void	enterLastName( Contact *contact )
 {
 	std::string	str;
 	
@@ -41,7 +41,7 @@ static void	enterLastName(Contact *contact)
 
 }
 
-static void	enterNickname(Contact *contact)
+static void	enterNickname( Contact *contact )
 {
 	std::string	str;
 	
@@ -55,7 +55,7 @@ static void	enterNickname(Contact *contact)
 	contact->setNickName(str);
 }
 
-static int	is_number(std::string str)
+static int	is_number( std::string str )
 {
 	int	i;
 
@@ -66,7 +66,7 @@ static int	is_number(std::string str)
     return (1);
 }
 
-static void	enterPhoneNumber(Contact *contact)
+static void	enterPhoneNumber( Contact *contact )
 {
 	std::string	str;
 
@@ -85,7 +85,7 @@ static void	enterPhoneNumber(Contact *contact)
 	contact->setPhoneNumber(str);
 }
 
-static void	enterSecret(Contact *contact)
+static void	enterSecret( Contact *contact )
 {
 	std::string	str;
 
@@ -99,7 +99,7 @@ static void	enterSecret(Contact *contact)
 	contact->setSecret(str);
 }
 
-void	addContact(PhoneBook *repertory)
+void	addContact( PhoneBook *repertory )
 {
 	Contact    	contact;
 

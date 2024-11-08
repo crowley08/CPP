@@ -6,20 +6,20 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:43:40 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:03:56 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:36:21 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/header.hpp"
 
-std::string	trunc(std::string str)
+std::string	trunc( std::string str )
 {
 	if (str.size() >= 10)
 		str = str.substr(0, 9) + ".";
 	return (str);
 }
 
-void	printChartHead(void)
+void	printChartHead( void )
 {
 	std::cout << "┌──────────┬──────────┬──────────┬──────────┐" << std::endl;
 	std::cout << "│" << std::setw(10) << std::right << "index";
@@ -29,7 +29,7 @@ void	printChartHead(void)
 	std::cout << "├──────────┼──────────┼──────────┼──────────┤" << std::endl;
 }
 
-void	printContactAttributes(Contact *contact)
+void	printContactAttributes( Contact *contact )
 {
 	std::cout << "│" << std::setw(10) << std::right << contact->getIndex();
     std::cout << "│" << std::setw(10) << std::right << trunc(contact->getFirstName());
@@ -38,7 +38,7 @@ void	printContactAttributes(Contact *contact)
 	std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 }
 
-void	printChart(PhoneBook *repertory)
+void	printChart( PhoneBook *repertory )
 {
 	Contact	contact;
 	int	index;
@@ -54,7 +54,7 @@ void	printChart(PhoneBook *repertory)
 	}
 }
 
-int main(void)
+int main( void )
 {
 	PhoneBook	repertory;
 	std::string	str;
@@ -73,10 +73,7 @@ int main(void)
 		if (str.compare("ADD") == 0)
 			addContact(&repertory);
 		else if (str.compare("SEARCH") == 0)
-		{
-			printContact(&repertory);void	printSearchChartHead(void);
-
-		}
+			printContact(&repertory);
 		else if (str.compare("EXIT") == 0)
 		    break ;
 		else

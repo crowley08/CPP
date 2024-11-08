@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:06:19 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/07 17:05:42 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:33:52 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,20 @@ class	Contact
 		~Contact(void);
 
 		//setters
-		void	setFirstName(std::string firstname);
-		void	setLastName(std::string lastname);
-		void	setNickName(std::string nickname);
-		void	setPhoneNumber(std::string phonenumber);
-		void	setSecret(std::string secret);
-		void	setIndex(int index);
+		void	setFirstName( std::string firstname );
+		void	setLastName( std::string lastname );
+		void	setNickName( std::string nickname );
+		void	setPhoneNumber( std::string phonenumber );
+		void	setSecret( std::string secret );
+		void	setIndex( int index );
 
 		//getters
-		std::string	getFirstName() const;
-		std::string	getLastName() const;
-		std::string	getNickName() const;
-		std::string	getPhoneNumber() const;
-		std::string	getSecret() const;
-		int			getIndex() const;
+		std::string	getFirstName( void ) const;
+		std::string	getLastName( void ) const;
+		std::string	getNickName( void ) const;
+		std::string	getPhoneNumber( void ) const;
+		std::string	getSecret( void ) const;
+		int			getIndex( void ) const;
 
 	private :
 

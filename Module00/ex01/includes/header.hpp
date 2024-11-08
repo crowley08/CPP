@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:33:13 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:01:32 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:33:23 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # include "Contact.Class.hpp"
 # include "PhoneBook.Class.hpp"
 
-void	addContact(PhoneBook *book);
-void	printContact(PhoneBook *book);
-void	printChartHead(void);
-void	printContactAttributes(Contact *contact);
-void	printSearchContactAttributes(Contact *contact);
-void	printChart(PhoneBook *book);
+void	addContact( PhoneBook *book );
+void	printContact( PhoneBook *book );
+void	printChartHead( void );
+void	printContactAttributes( Contact *contact );
+void	printSearchContactAttributes( Contact *contact );
+void	printChart( PhoneBook *book );
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:44:26 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 12:38:14 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 15:36:34 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PhoneBook::~PhoneBook()
 	return ;
 }
 
-Contact	PhoneBook::getContact(int index) const
+Contact	PhoneBook::getContact( int index ) const
 {	
 	return (this->_contact[index]);
 }
@@ -34,7 +34,7 @@ int	PhoneBook::getCount() const
 	return (this->_count);
 }
 
-void PhoneBook::setContact(Contact contact)
+void PhoneBook::setContact( Contact contact )
 {
 	this->_contact[this->_index] = contact;
 	if (_count < 8)
