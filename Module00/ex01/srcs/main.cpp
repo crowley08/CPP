@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:43:40 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/07 17:35:05 by saandria         ###   ########.fr       */
+/*   Updated: 2024/11/08 11:30:13 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@ void	addContact(PhoneBook *book)
 	Contact    	contact;
 
 
-	std::cout << "Enter first name : ";
+	std::cout << "	Enter first name : ";
 	std::getline(std::cin, str);
 	contact.setFirstName(str);
-	std::cout << "Enter last name : ";
+	std::cout << "	Enter last name : ";
 	std::getline(std::cin, str);
 	contact.setLastName(str);
-	std::cout << "Enter nickname : ";
+	std::cout << "	Enter nickname : ";
 	std::getline(std::cin, str);
 	contact.setNickName(str);
-	std::cout << "Enter phone number : ";
+	std::cout << "	Enter phone number : ";
 	std::getline(std::cin, str);
 	contact.setPhoneNumber(str);
-	std::cout << "Enter darkest secret : ";
+	std::cout << "	Enter darkest secret : ";
 	std::getline(std::cin, str);
 	contact.setSecret(str);
 	book->setContact(contact);
@@ -57,20 +57,12 @@ void	printContactAttributes(Contact *contact)
 	std::cout << "└──────────┴──────────┴──────────┴──────────┴──────────┘" << std::endl;
 }
 
-void	printContact(PhoneBook *book)
+void	printChart(PhoneBook *book)
 {
-	int		index;	
-	int		count;
 	Contact	contact;
+	int	index;
 
 	index = 0;
-	count = book->getCount();
-	if (count == 0)
-	{
-		std::cout << "There is no contact in your repertory" << std::endl;
-		std::cout << "type [ADD] to add contact" << std::endl;
-		return ;
-	}
 	printChartHead();
 	while (index < book->getCount())
 	{	
@@ -78,10 +70,6 @@ void	printContact(PhoneBook *book)
 		contact.setIndex(index + 1);
 		printContactAttributes(&contact);
  		index++;
-	}
-	if (count > 0)
-	{
-		
 	}
 }
 
@@ -94,9 +82,10 @@ int main(void)
 	std::cout << " -ADD: add a contact to the phonebook" << std::endl;
 	std::cout << " -SEARCH: search for a contact in the phonebook" << std::endl;
 	std::cout << " -EXIT: quit the program" << std::endl;
+	std::cout << std::endl;
 	while (1)
 	{
-		std::cout << "$> ";
+		std::cout << "> ";
 		std::getline(std::cin, str);
 		if (str.empty())
 			continue ;
