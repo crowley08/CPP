@@ -1,4 +1,6 @@
-SRCS			= Account.cpp test.cpp
+SRCS			=	Account.cpp \
+					tests.cpp \
+					
 OBJS			= $(SRCS:.cpp=.o)
 
 
@@ -14,7 +16,7 @@ all:			$(NAME)
 $(NAME):		$(OBJS)
 				$(CPP) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
-%.o:			%.c
+%.o:			%.cpp
 				$(CPP) $(CPPFLAGS) -c $< -o $@
 
 clean:
