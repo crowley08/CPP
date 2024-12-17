@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:44:26 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:36:34 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:45:19 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void PhoneBook::setContact( Contact contact )
 	this->_contact[this->_index] = contact;
 	if (_count < 8)
 		_count = _count + 1;
-	else
-		_count = _count;
+	// else
+	// 	_count = _count;
 	this->_index = (this->_index + 1) % 8;
 	return ;
 }

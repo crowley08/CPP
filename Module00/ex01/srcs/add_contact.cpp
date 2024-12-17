@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 14:30:23 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:34:25 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:02:38 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,14 @@ static void	enterFirstName( Contact *contact )
 
 	std::cout << " Enter first name : ";
 	std::getline(std::cin, str);
+	if (std::cin.fail())
+		return ;
 	while (str.empty())
 	{
 	    std::cout << "		First name should not be empty, please re-enter : ";
 		std::getline(std::cin, str);
+		if (std::cin.fail())
+			return ;
 	}
 	contact->setFirstName(str);
 }
@@ -32,10 +36,14 @@ static void	enterLastName( Contact *contact )
 	
 	std::cout << " Enter last name : ";
 	std::getline(std::cin, str);
+	if (std::cin.fail())
+		return ;
 	while (str.empty())
 	{
 	    std::cout << "		Last name should not be empty, please re-enter : ";
 		std::getline(std::cin, str);
+		if (std::cin.fail())
+			return ;
 	}
 	contact->setLastName(str);
 
@@ -47,10 +55,14 @@ static void	enterNickname( Contact *contact )
 	
 	std::cout << " Enter nickname : ";
 	std::getline(std::cin, str);
+	if (std::cin.fail())
+		return ;
 	while (str.empty())
 	{
 	    std::cout << "		Nickname should not be empty, please re-enter : ";
 		std::getline(std::cin, str);
+		if (std::cin.fail())
+			return ;
 	}
 	contact->setNickName(str);
 }
@@ -72,15 +84,21 @@ static void	enterPhoneNumber( Contact *contact )
 
 	std::cout << " Enter phone number : ";
 	std::getline(std::cin, str);
+	if (std::cin.fail())
+		return ;
 	while (str.empty())
 	{
 	    std::cout << "		Phone number should not be empty, please re-enter : ";
 		std::getline(std::cin, str);
+		if (std::cin.fail())
+			return ;
 	}
 	while (!is_number(str))
 	{
 		std::cout << "        Phone number should only contain digits, please re-enter : ";
         std::getline(std::cin, str);
+		if (std::cin.fail())
+			return ;
   	}
 	contact->setPhoneNumber(str);
 }
@@ -91,10 +109,14 @@ static void	enterSecret( Contact *contact )
 
 	std::cout << " Enter darkest secret : ";
 	std::getline(std::cin, str);
+	if (std::cin.fail())
+		return ;
 	while (str.empty())
 	{
 	    std::cout << "		Darkest secret should not be empty, please re-enter : ";
 		std::getline(std::cin, str);
+		if (std::cin.fail())
+			return ;
 	}
 	contact->setSecret(str);
 }

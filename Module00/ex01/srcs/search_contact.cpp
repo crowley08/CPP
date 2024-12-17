@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 11:16:28 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:37:00 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/17 14:05:44 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,15 @@ void	printContact( PhoneBook *book )
 	{
 		std::cout << "Enter the index you search for - ";
 		std::cin >> str;
+		if (std::cin.fail())
+			return ;
 		while (str > count  || str < 1)
 		{
 			std::cin.clear();
 			std::cout << "Please enter an index between 1 and " << count << "  - ";
 			std::cin >> str;
+			if (std::cin.fail())
+				return ;
 		}
 		tmp = searchContact(book, str);
 	}

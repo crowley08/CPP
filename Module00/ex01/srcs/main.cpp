@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 12:43:40 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:36:21 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:59:53 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int main( void )
 	{
 		std::cout << "> ";
 		std::getline(std::cin, str);
+		if (std::cin.fail())
+			return (0);
 		if (str.empty())
 			continue ;
 		if (str.compare("ADD") == 0)

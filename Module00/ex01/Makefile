@@ -4,7 +4,7 @@ OBJS			= $(SRCS:.cpp=.o)
 
 CPP				= c++
 RM				= rm -f
-CPPFLAGS		= -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS		= -Wall -Wextra -Werror
 
 NAME			= phonebook
 

@@ -6,11 +6,11 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 11:06:19 by saandria          #+#    #+#             */
-/*   Updated: 2024/11/08 15:33:52 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/17 13:44:42 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	CONTACT_CLASS_h
+#ifndef	CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
 # include "header.hpp"
