@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.Class.hpp                                   :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/24 08:36:18 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/26 13:29:28 by saandria         ###   ########.fr       */
+/*   Created: 2024/12/26 11:25:32 by saandria          #+#    #+#             */
+/*   Updated: 2024/12/26 13:14:11 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_CLASS_H
+#include "Harl.Class.hpp"
 
-# define ZOMBIE_CLASS_H
-
-# include <iostream>
-
-class	Zombie
+int	main( int argc, char **argv )
 {
-	public:
-	
-		Zombie( std::string name );
-		~Zombie( void );
-		Zombie	*newZombie( std::string name );
-		void	randomChump( std::string name );
-		
-	private:
-	
-		std::string	_name;
-		void	_announce( void );
+	Harl	harl;
 
-};
-
-#endif
+	if (argc != 2)
+	{
+		std::cerr << "Usage: ./harlfilter <complain>" << std::endl;
+	    return (1);
+	}
+	harl.complain((std::string)argv[1]);
+	return (0);
+}

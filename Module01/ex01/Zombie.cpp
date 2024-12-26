@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 08:39:40 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/24 10:06:50 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/26 13:33:16 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,10 @@ Zombie::~Zombie( void )
 void	Zombie::setName( std::string name )
 {
 	this->_name = name; 
+}
+
+void	Zombie::_announce( void )
+{
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
