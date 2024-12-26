@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 10:43:09 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/24 11:30:42 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/26 14:07:43 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ int main( void )
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB Fana("Fana");
+		Fana.attack();
+		Fana.setWeapon(club);
+		Fana.attack();
+		club.setType("some other type of club");
+		Fana.attack();
 	}	
-	return 0;
+	return (0);
 }
