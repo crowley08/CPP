@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:54 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 10:32:33 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 12:18:49 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Fixed
 	public:
 
 		Fixed();
-		Fixed( Fixed const & src );
+		Fixed( Fixed const& src );
 		~Fixed();
 
-		Fixed &	operator=( Fixed const & rhs );
+		Fixed&	operator=( Fixed const& rhs );
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 
@@ -35,6 +35,6 @@ class Fixed
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Fixed const & rhs );
+std::ostream&	operator<<( std::ostream& o, Fixed const& rhs );
 
 #endif /* *********************************************************** FIXED_H */

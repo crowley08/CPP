@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:42 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 11:27:19 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 12:19:27 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed(): _value(0)
 	return ;
 }
 
-Fixed::Fixed( const Fixed & src ): _value(src._value)
+Fixed::Fixed( const Fixed& src ): _value(src._value)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
@@ -33,7 +33,7 @@ Fixed::~Fixed()
 	return ;
 }
 
-Fixed &				Fixed::operator=( Fixed const & rhs )
+Fixed&				Fixed::operator=( Fixed const& rhs )
 {
 	if ( this != &rhs )
 	{
@@ -43,7 +43,7 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 	return (*this);
 }
 
-std::ostream &			operator<<( std::ostream & o, Fixed const & rhs )
+std::ostream&			operator<<( std::ostream& o, Fixed const& rhs )
 {
 	o << rhs.getRawBits();
 	return (o);

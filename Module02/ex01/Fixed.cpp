@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:42 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 11:30:17 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 12:20:38 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed(): _value(0)
 	return ;
 }
 
-Fixed::Fixed( Fixed const & src ): _value(src._value)
+Fixed::Fixed( Fixed const& src ): _value(src._value)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src._value;
@@ -47,7 +47,7 @@ Fixed::~Fixed()
 	return ;
 }
 
-Fixed &				Fixed::operator=( Fixed const & rhs )
+Fixed&	Fixed::operator=( Fixed const& rhs )
 {
 	if ( this != &rhs )
 	{
@@ -57,7 +57,7 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 	return *this;
 }
 
-std::ostream &			operator<<( std::ostream & o, Fixed const & i )
+std::ostream&	operator<<( std::ostream& o, Fixed const& i )
 {
 	o << i.toFloat();
 	return (o);
