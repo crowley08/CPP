@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:54 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 08:08:55 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 10:32:33 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ class Fixed
 
 };
 
-// std::ostream &			operator<<( std::ostream & o, Fixed const & i );
+std::ostream &			operator<<( std::ostream & o, Fixed const & rhs );
 
 #endif /* *********************************************************** FIXED_H */

@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:42 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 08:31:52 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 10:33:14 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 		this->_value = rhs.getRawBits();
 	}
 	return (*this);
+}
+
+std::ostream &			operator<<( std::ostream & o, Fixed const & rhs )
+{
+	o << rhs.getRawBits();
+	return (o);
 }
 
 /*
