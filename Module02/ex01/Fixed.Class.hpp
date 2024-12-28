@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:54 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 08:23:46 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 09:05:47 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>
 
 class Fixed
 {

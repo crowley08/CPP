@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:42 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 08:29:10 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 09:11:18 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ Fixed::Fixed( Fixed const & src ): _value(src._value)
 Fixed::Fixed( float const f ): _value(f)
 {
 	std::cout << "Float constructor called" << std::endl;
+	this->_value = roundf(f * (1 << _bits));
 }
 
 Fixed::Fixed( int const i ): _value(i)
 {
 	std::cout << "Int constructor called" << std::endl;
+	this->_value = i << _bits;
 }
 
 /*
@@ -64,7 +66,7 @@ Fixed &				Fixed::operator=( Fixed const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 {
-	o << "Value = " << i.getRawBits();
+	o << i.toFloat();
 	return (o);
 }
 
@@ -74,7 +76,7 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 */
 float	Fixed::toFloat( void ) const
 {
-	return ( static_cast<float>(this->_value) / (1 << Fixed::_bits));
+	return (float)this->_value / (float)(1 << _bits);
 }
 
 int	Fixed::toInt( void ) const
