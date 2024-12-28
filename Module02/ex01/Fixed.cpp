@@ -6,17 +6,13 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:42 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 11:08:48 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 11:30:17 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.Class.hpp"
 
 int const	Fixed::_bits = 8;
-
-/*
-** ------------------------------- CONSTRUCTOR --------------------------------
-*/
 
 Fixed::Fixed(): _value(0)
 {
@@ -45,20 +41,11 @@ Fixed::Fixed( int const i ): _value(i)
 	return ;
 }
 
-/*
-** -------------------------------- DESTRUCTOR --------------------------------
-*/
-
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 	return ;
 }
-
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
 
 Fixed &				Fixed::operator=( Fixed const & rhs )
 {
@@ -76,10 +63,6 @@ std::ostream &			operator<<( std::ostream & o, Fixed const & i )
 	return (o);
 }
 
-
-/*
-** --------------------------------- METHODS ----------------------------------
-*/
 float	Fixed::toFloat( void ) const
 {
 	return (float)this->_value / (float)(1 << _bits);
@@ -89,10 +72,6 @@ int	Fixed::toInt( void ) const
 {
 	return ( this->_value >> _bits );
 }
-
-/*
-** --------------------------------- ACCESSOR ---------------------------------
-*/
 
 int	Fixed::getRawBits( void ) const
 {
@@ -104,5 +83,3 @@ void	Fixed::setRawBits( int const raw )
 {
 	this->_value = raw;
 }
-
-/* ************************************************************************** */
