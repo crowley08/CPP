@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 09:56:42 by saandria          #+#    #+#             */
-/*   Updated: 2024/12/28 09:11:18 by saandria         ###   ########.fr       */
+/*   Updated: 2024/12/28 11:08:48 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,28 @@ int const	Fixed::_bits = 8;
 Fixed::Fixed(): _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
+	return ;
 }
 
 Fixed::Fixed( Fixed const & src ): _value(src._value)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = src._value;
+	return ;
 }
 
 Fixed::Fixed( float const f ): _value(f)
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(f * (1 << _bits));
+	return ;
 }
 
 Fixed::Fixed( int const i ): _value(i)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->_value = i << _bits;
+	return ;
 }
 
 /*
@@ -47,6 +52,7 @@ Fixed::Fixed( int const i ): _value(i)
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+	return ;
 }
 
 
