@@ -20,25 +20,23 @@ Point::~Point()
 
 Point &				Point::operator=( Point const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
+	if ( this != &rhs )
+		new (this)Point(rhs.getX().toFloat(), rhs.getY().toFloat());
 	return *this;
 }
 
 std::ostream &			operator<<( std::ostream & o, Point const & i )
 {
-	//o << "Value = " << i.getValue();
+	o << "x:(" << i.getX() << "); y:(" << i.getY() << ");";
 	return o;
 }
 
 Fixed	Point::getX( void ) const
 {
-	return (this->_x);
+	return (this->_x.toFloat());
 }
 
 Fixed    Point::getY( void ) const
 {
-	return (this->_y);
+	return (this->_y.toFloat());
 }
