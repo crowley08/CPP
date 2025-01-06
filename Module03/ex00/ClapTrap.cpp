@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:43:33 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/06 10:19:05 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:14:10 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	ClapTrap::attack( std::string const& target )
 	std::cout << "Claptrap " << this->getName() << " attacks " << target << ", causing ";
 	std::cout << this->getAttackDamage() << " points of damage!" << std::endl;
 	this->_energyPoints--;
+	this->_hitPoints--;
 	return ;
 }
 
@@ -79,4 +80,9 @@ std::string	ClapTrap::getName() const
 int	ClapTrap::getAttackDamage() const
 {
 	return this->_attackDamage;
+}
+
+int	ClapTrap::getEnergyPoint() const
+{
+	return this->_energyPoints;
 }
