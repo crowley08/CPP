@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:31:32 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/06 11:13:43 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:51:53 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class ClapTrap
 		std::string	getName( void ) const;
 		int	getAttackDamage( void ) const;
 		int	getEnergyPoint( void ) const;
+		int	getHitPoint( void ) const;
 
 	private:
 	

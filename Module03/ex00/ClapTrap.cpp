@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:43:33 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/06 11:14:10 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:52:37 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ ClapTrap&	ClapTrap::operator=( ClapTrap const& rhs )
 	if ( this != &rhs )
 	{
 		this->_name = rhs.getName();
+		this->_attackDamage = rhs.getAttackDamage();
+		this->_energyPoints = rhs.getEnergyPoint();
+		this->_hitPoints = rhs.getHitPoint();
 	}
 	return *this;
 }
@@ -85,4 +88,9 @@ int	ClapTrap::getAttackDamage() const
 int	ClapTrap::getEnergyPoint() const
 {
 	return this->_energyPoints;
+}
+
+int	ClapTrap::getHitPoint() const
+{
+	return this->_hitPoints;
 }
