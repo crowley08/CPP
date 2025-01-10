@@ -6,11 +6,11 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 11:17:23 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/10 13:12:21 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:46:29 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.Class.hpp"
+#include "../includes/ScavTrap.Class.hpp"
 
 ScavTrap::ScavTrap( void ) : ClapTrap()
 {

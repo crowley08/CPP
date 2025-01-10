@@ -6,11 +6,11 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:43:33 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/10 13:12:13 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:46:43 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.Class.hpp"
+#include "../includes/ClapTrap.Class.hpp"
 
 ClapTrap::ClapTrap(): _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
