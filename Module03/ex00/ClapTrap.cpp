@@ -6,13 +6,13 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:43:33 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/07 12:42:10 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/10 13:11:57 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.Class.hpp"
 
-ClapTrap::ClapTrap(): _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(): _name("default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 	return ;
@@ -48,12 +48,6 @@ ClapTrap&	ClapTrap::operator=( ClapTrap const& rhs )
 	}
 	return *this;
 }
-
-// std::ostream&	operator<<( std::ostream& o, ClapTrap const& i )
-// {
-// 	//o << "Value = " << i.getValue();
-// 	return o;
-// }
 
 void	ClapTrap::attack( std::string const& target )
 {
@@ -107,4 +101,24 @@ int	ClapTrap::getEnergyPoint() const
 int	ClapTrap::getHitPoint() const
 {
 	return this->_hitPoints;
+}
+
+void	ClapTrap::setName( std::string name )
+{
+    this->_name = name;
+}
+
+void    ClapTrap::setHitPoints( int hitPoints )
+{
+	this->_hitPoints = hitPoints;
+}
+
+void    ClapTrap::setEnergyPoints( int energyPoints )
+{
+	this->_energyPoints = energyPoints;
+}
+
+void    ClapTrap::setAttackDamage( int attackDamage )
+{
+	this->_attackDamage = attackDamage;
 }
