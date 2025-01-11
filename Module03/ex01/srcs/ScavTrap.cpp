@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 11:17:23 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/10 13:46:29 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/11 09:38:11 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ ScavTrap::ScavTrap( void ) : ClapTrap()
 
 ScavTrap::ScavTrap( std::string name) : ClapTrap(name)
 {
-	// this->setName(name);
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
 	this->setAttackDamage(20);

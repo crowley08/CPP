@@ -6,13 +6,13 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:43:33 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/10 13:46:11 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/11 09:37:29 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.Class.hpp"
 
-ClapTrap::ClapTrap(): _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(): _name(""), _hitPoints(100), _energyPoints(50), _attackDamage(20)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 	return ;
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap( const ClapTrap& src )
 	return ;
 }
 
-ClapTrap::ClapTrap( std::string name ): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap( std::string name ): _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20)
 {
 	std::cout << "ClapTrap constructor with name(" << name << ") called" << std::endl;
 	return ;
@@ -70,8 +70,8 @@ void	ClapTrap::beRepaired( unsigned int amount )
 		return ;
 	}
 	int	tmp = this->getHitPoint() + amount;
-	if (tmp > 10)
-		this->_hitPoints = 10;
+	if (tmp > 100)
+		this->_hitPoints = 100;
 	this->_hitPoints += amount;
 	std::cout << "Claptrap " << this->getName() << " got " << amount << " hitpoint(s)!"<< std::endl;
 	this->_energyPoints--;
