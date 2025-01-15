@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:25:58 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 11:41:36 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:52:20 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 	    this->_source[i] = NULL;
 }
 
 MateriaSource::MateriaSource( const MateriaSource & src )
 {
-	std::cout << "MateriaSource copy constructor" << std::endl;
     *this = src;
     for (int i = 0; i < 4; i++)
 	{
@@ -34,7 +32,6 @@ MateriaSource::MateriaSource( const MateriaSource & src )
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "MateriaSource destructor" << std::endl;
     for (int i = 0; i < 4; i++)
         if (this->_source[i])
             delete this->_source[i];
@@ -63,6 +60,7 @@ void	MateriaSource::learnMateria(AMateria* m)
         if (!this->_source[i])
         {
             this->_source[i] = m->clone();
+			std::cout << "* learns: " << m->getType() << " *" << std::endl;
 			delete m;
             return ;
         }
@@ -75,7 +73,10 @@ AMateria*	MateriaSource::createMateria(std::string const& type)
 	for (int i = 0; i < 4; i++)
 	{
         if (this->_source[i] && this->_source[i]->getType() == type)
+		{
+			std::cout << "* create: " << this->_source[i]->getType() << " *" << std::endl;
             return this->_source[i]->clone();
+		}
     }
 	std::cout << "Type not defined!" << std::endl;
 	return NULL;

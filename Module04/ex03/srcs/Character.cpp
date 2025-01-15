@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:37:32 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 12:21:56 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/15 16:08:53 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,16 @@ Character::Character() : _name("charcter")
 {
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
-	std::cout << "Character constructor" << std::endl;
 }
 
 Character::Character( std::string const& name ) : _name(name)
 {
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
-	std::cout << "Character " << name << " constructor" << std::endl;
 }
 
 Character::Character( const Character & src )
 {
-	std::cout << "Character copy constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 		if (this->_inventory[i])
 			delete this->_inventory[i];
@@ -47,9 +44,11 @@ Character::~Character()
     for (int i = 0; i < 4; i++)
 	{
         if (this->_inventory[i])
+		{
+			this->_inventory[i] = NULL;
             delete this->_inventory[i];
+		}
 	}
-	std::cout << "Character destructor" << std::endl;
 }
 
 Character &				Character::operator=( Character const & rhs )
@@ -81,6 +80,7 @@ void	Character::equip( AMateria* m )
     {
         if (!this->_inventory[i])
         {
+			std::cout << this->_name << " equiped " << m->getType() << std::endl;
             this->_inventory[i] = m;
             return ;
         }
@@ -91,7 +91,11 @@ void	Character::equip( AMateria* m )
 void	Character::unEquip( int idx )
 {
 	if (idx < 0 || idx >= 4 || !this->_inventory[idx])
+	{
+		std::cout << "No item on the index " << idx << std::endl;	
         return ;
+	}
+	std::cout << this->_name << " UnEquipped " << _inventory[idx]->getType() << std::endl;
     this->_inventory[idx] = NULL;
 }
 

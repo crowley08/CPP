@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:03:22 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 10:07:45 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:41:24 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,15 @@
 Ice::Ice()
 {
 	this->_type = "ice";
-	std::cout << "Ice constructor" << std::endl;
 }
 
 Ice::Ice( const Ice & src )
 {
-	std::cout << "Ice copy constructor" << std::endl;
     *this = src;
 }
 
 Ice::~Ice()
 {
-	std::cout << "Ice destructor" << std::endl;
 }
 
 Ice &				Ice::operator=( Ice const & rhs )

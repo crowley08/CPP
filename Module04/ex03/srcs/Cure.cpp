@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:03:22 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 10:12:49 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:41:16 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,15 @@
 Cure::Cure()
 {
 	this->_type = "cure";
-	std::cout << "Cure constructor" << std::endl;
 }
 
 Cure::Cure( const Cure & src )
 {
-	std::cout << "Cure copy constructor" << std::endl;
     *this = src;
 }
 
 Cure::~Cure()
 {
-	std::cout << "Cure destructor" << std::endl;
 }
 
 Cure &				Cure::operator=( Cure const & rhs )
