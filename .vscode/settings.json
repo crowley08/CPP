@@ -5,6 +5,7 @@
 		"new": "cpp",
 		"ostream": "cpp",
 		"iostream": "cpp",
-		"fixed.class.hpp": "c"
+		"fixed.class.hpp": "c",
+		"string": "cpp"
 	}
 }
