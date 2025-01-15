@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.Class.hpp                                      :+:      :+:    :+:   */
+/*   IMateriaSource.Class.hpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 10:42:27 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 10:50:53 by saandria         ###   ########.fr       */
+/*   Created: 2025/01/15 11:19:02 by saandria          #+#    #+#             */
+/*   Updated: 2025/01/15 11:38:21 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_CLASS_HPP
-# define DOG_CLASS_HPP
+#ifndef IMATERIASOURCE_CLASS_HPP
+# define IMATERIASOURCE_CLASS_HPP
 
 # include <iostream>
 # include <string>
-# include "header.h"
-# include "Brain.Class.hpp"
+# include "AMateria.Class.hpp"
 
-class Dog : virtual public Animal
+class IMateriaSource
 {
 
 	public:
 
-		Dog();
-		Dog( Dog const& src );
-		~Dog();
-
-		Dog&		operator=( Dog const& rhs );
-
-		void	makeSound( void ) const;
-
-	private:
-	
-		Brain*	_brain;
+		virtual ~IMateriaSource();
+		virtual void learnMateria(AMateria* m) = 0;
+		virtual AMateria* createMateria(std::string const & type) = 0;
 
 };
 
-#endif /* ************************************************************* DOG_CLASS_H */
+#endif /* ************************************************** IMATERIASOURCE_CLASS_H */

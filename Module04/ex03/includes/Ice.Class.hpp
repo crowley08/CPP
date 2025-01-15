@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.Class.hpp                                      :+:      :+:    :+:   */
+/*   Ice.Class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 10:42:27 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 10:50:53 by saandria         ###   ########.fr       */
+/*   Created: 2025/01/15 10:00:26 by saandria          #+#    #+#             */
+/*   Updated: 2025/01/15 10:48:00 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_CLASS_HPP
-# define DOG_CLASS_HPP
+#ifndef ICE_CLASS_HPP
+# define ICE_CLASS_HPP
 
 # include <iostream>
 # include <string>
-# include "header.h"
-# include "Brain.Class.hpp"
+# include "AMateria.Class.hpp"
 
-class Dog : virtual public Animal
+class Ice : virtual public AMateria
 {
 
 	public:
 
-		Dog();
-		Dog( Dog const& src );
-		~Dog();
+		Ice();
+		Ice( Ice const& src );
+		~Ice();
 
-		Dog&		operator=( Dog const& rhs );
+		Ice&		operator=( Ice const& rhs );
 
-		void	makeSound( void ) const;
+		AMateria*	clone( void ) const;
+		void	use(ICharacter& target);
 
 	private:
-	
-		Brain*	_brain;
 
 };
 
-#endif /* ************************************************************* DOG_CLASS_H */
+#endif /* ************************************************************* ICE_CLASS_H */

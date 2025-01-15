@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:52:35 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/14 11:12:04 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/15 10:48:21 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : virtual public Animal
 
 		Cat();
 		Cat( Cat const& src );
-		virtual ~Cat();
+		~Cat();
 
 		Cat&		operator=( Cat const& rhs );
 

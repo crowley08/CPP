@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.Class.hpp                                      :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/14 10:42:27 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 10:48:15 by saandria         ###   ########.fr       */
+/*   Created: 2025/01/15 09:55:11 by saandria          #+#    #+#             */
+/*   Updated: 2025/01/15 09:58:55 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_CLASS_HPP
-# define DOG_CLASS_HPP
+#include "../includes/ICharacter.Class.hpp"
 
-# include <iostream>
-# include <string>
-# include "header.h"
-
-class Dog : virtual public Animal
+ICharacter::~ICharacter()
 {
-
-	public:
-
-		Dog();
-		Dog( Dog const& src );
-		~Dog();
-
-		Dog&		operator=( Dog const& rhs );
-
-		void	makeSound( void ) const;
-
-	private:
-
-};
-
-#endif /* ************************************************************* DOG_CLASS_H */
+	std::cout << "ICharacter destructor" << std::endl;
+}
