@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:25:58 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/15 15:52:20 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/16 09:44:22 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	MateriaSource::learnMateria(AMateria* m)
             return ;
         }
     }
+	delete m;
     std::cout << "Source is full!" << std::endl;
 }
 
