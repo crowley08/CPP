@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:18:02 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/14 11:18:17 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:38:15 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ class WrongAnimal
 
 		WrongAnimal();
 		WrongAnimal( WrongAnimal const& src );
-		virtual ~WrongAnimal();
+		~WrongAnimal();
 
 		WrongAnimal&		operator=( WrongAnimal const& rhs );
 
 		void	setType( std::string type );
 		std::string	getType( void ) const;
 
-		virtual void	makeSound( void ) const;
+		void	makeSound( void ) const;
 
 	private:
 

@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:46:07 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/14 12:56:17 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:48:37 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@ Dog::Dog()
 	this->setType( "Dog" );
 }
 
-Dog::Dog( const Dog& src )
+Dog::Dog( const Dog& src ) : AAnimal( src )
 {
 	std::cout << "Dog copy constructor" << std::endl;
-	*this = src;
+	this->_brain = new Brain(*src._brain);
 }
 
 Dog::~Dog()
 {
-	delete(this->_brain);
+	if (this->_brain)
+		delete(this->_brain);
 	std::cout << "Dog destructor" << std::endl;
 }
 
@@ -35,7 +36,9 @@ Dog&				Dog::operator=( Dog const& rhs )
 {
 	if ( this != &rhs )
 	{
-		this->_brain = rhs._brain;
+		AAnimal::operator=(rhs);
+		delete this->_brain;
+		this->_brain = new Brain(*rhs._brain);
 		this->setType( rhs.getType() );
 	}
 	return *this;

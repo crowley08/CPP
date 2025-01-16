@@ -17,7 +17,7 @@
 # include <string>
 # include "header.h"
 
-class WrongCat : virtual public WrongAnimal
+class WrongCat : public WrongAnimal
 {
 
 	public:

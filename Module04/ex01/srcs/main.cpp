@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:26:28 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/14 13:27:57 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:45:30 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,53 @@ int main()
 	}
 	std::cout << std::endl << "~~~~~~~~~~~~~~~~" << std::endl << std::endl;
 	{
-		const Animal*	i = new Dog();
-		const Animal*	j = new Cat();
-	
-		delete(i);
-		delete(j);
+		const Dog    i;
+        const Dog    j(i);
+		
+		std::cout << i.getType() << std::endl;
+		i.makeSound();
+		j.makeSound();
+	}
+	std::cout << std::endl << "~~~~~~~~~~~~~~~~" << std::endl << std::endl;
+	{
+		const Animal    i;
+        const Animal    j = i;
+		
+		std::cout << i.getType() << std::endl;
+		i.makeSound();
+		j.makeSound();
+	}
+	std::cout << std::endl << "~~~~~~~~~~~~~~~~" << std::endl << std::endl;
+	{
+		Dog	basic;
+		{
+			Dog	tmp = basic;
+		}
+	}
+	std::cout << std::endl << "~~~~~~~~~~~~~~~~" << std::endl << std::endl;
+	{
+		const Cat    i;
+        const Cat    j(i);
+		
+		std::cout << i.getType() << std::endl;
+		i.makeSound();
+		j.makeSound();
+	}
+	std::cout << std::endl << "~~~~~~~~~~~~~~~~" << std::endl << std::endl;
+	{
+		const Animal    i;
+        const Animal    j = i;
+		
+		std::cout << i.getType() << std::endl;
+		i.makeSound();
+		j.makeSound();
+	}
+	std::cout << std::endl << "~~~~~~~~~~~~~~~~" << std::endl << std::endl;
+	{
+		Cat	basic;
+		{
+			Cat	tmp = basic;
+		}
 	}
 	return 0;
 }

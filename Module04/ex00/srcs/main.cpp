@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:26:28 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/14 12:25:17 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/16 10:41:01 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ int main()
 	{
 		const WrongAnimal* meta = new WrongAnimal();
 		const WrongAnimal* i = new WrongCat();
+		const WrongCat* j = new WrongCat();
 	
 		std::cout << i->getType() << " " << std::endl;
+		std::cout << j->getType() << " " << std::endl;
 		i->makeSound();
+		j->makeSound();
 		meta->makeSound();
 		delete(i);
+		delete (j);
 		delete(meta);
 	}
 	std::cout << std::endl << "~~~~~~~~~~~~~~~~" << std::endl << std::endl;

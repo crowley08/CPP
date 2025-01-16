@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 12:31:45 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/14 12:48:16 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/16 11:28:17 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@ class Brain
 		~Brain();
 
 		Brain&		operator=( Brain const& rhs );
+
+		std::string	getIdea(int idx) const;
+		void		setIdea( std::string idea, int idx );
 
 	private:
 

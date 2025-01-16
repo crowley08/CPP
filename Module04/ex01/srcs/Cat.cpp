@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:52:52 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/14 12:56:14 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/16 13:45:59 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@ Cat::Cat()
 	this->setType( "Cat" );
 }
 
-Cat::Cat( const Cat& src )
+Cat::Cat( const Cat& src ) : Animal(src)
 {
 	std::cout << "Cat copy constructor" << std::endl;
-	*this = src;
+	this->_brain = new Brain(*src._brain);
 }
 
 Cat::~Cat()
 {
-	delete(this->_brain);
+	if (this->_brain)
+		delete(this->_brain);
 	std::cout << "Cat destructor" << std::endl;
 }
 
@@ -35,7 +36,9 @@ Cat&				Cat::operator=( Cat const& rhs )
 {
 	if ( this != &rhs )
 	{
-		this->_brain = rhs._brain;
+		Animal::operator=(rhs);
+		delete this->_brain;
+		this->_brain = new Brain(*rhs._brain);
 		this->setType( rhs.getType() );
 	}
 	return *this;
