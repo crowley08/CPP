@@ -6,13 +6,13 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:37:32 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/16 09:31:05 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/17 15:08:41 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/Character.Class.hpp"
 
-Character::Character() : _name("charcter")
+Character::Character() : _name("character")
 {
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
@@ -26,10 +26,7 @@ Character::Character( std::string const& name ) : _name(name)
 
 Character::Character( const Character & src )
 {
-	for (int i = 0; i < 4; i++)
-		if (this->_inventory[i])
-			delete this->_inventory[i];
-    *this = src;
+	if (this == &src) return;
 	for (int i = 0; i < 4; i++)
 	{
 		if (src._inventory[i])
@@ -43,11 +40,8 @@ Character::~Character()
 {
     for (int i = 0; i < 4; i++)
 	{
-        if (this->_inventory[i])
-		{
-			this->_inventory[i] = NULL;
-            delete this->_inventory[i];
-		}
+		if (this->_inventory[i] != NULL)
+			delete this->_inventory[i];
 	}
 }
 
@@ -55,9 +49,6 @@ Character &				Character::operator=( Character const & rhs )
 {
 	if ( this != &rhs )
 	{
-		for (int i = 0; i < 4; i++)
-			if (this->_inventory[i])
-				delete this->_inventory[i];
 		for (int i = 0; i < 4; i++)
 		{
 			if (rhs._inventory[i])
@@ -76,6 +67,8 @@ std::string const&	Character::getName() const
 
 void	Character::equip( AMateria* m )
 {
+	if (!m)
+		return ;
 	for (int i = 0; i < 4; i++)
     {
         if (!this->_inventory[i])
@@ -95,7 +88,7 @@ void	Character::unEquip( int idx )
 		std::cout << "No item on the index " << idx << std::endl;	
         return ;
 	}
-	std::cout << this->_name << " UnEquipped " << _inventory[idx]->getType() << std::endl;
+	std::cout << this->_name << " dropped " << _inventory[idx]->getType() << std::endl;
     this->_inventory[idx] = NULL;
 }
 
@@ -103,7 +96,7 @@ void	Character::use( int idx, ICharacter& target )
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->_inventory[i] && idx == i)
+		if (i == idx && this->_inventory[i])
 		{
             this->_inventory[i]->use(target);
 			return ;

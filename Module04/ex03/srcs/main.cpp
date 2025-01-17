@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 09:41:49 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/16 09:43:40 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/17 14:52:17 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,18 @@
 
 int	main( void )
 {
+	{
+		AMateria* ice = new Ice();
+		AMateria* cure = new Cure();
+		
+		Character i("i");
+		i.equip(ice);
+		i.equip(cure);
+		
+		Character j(i);
+		j.use(1, i);
+	}
+	std::cout << std::endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl << std::endl;
 	{
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Ice());
@@ -32,36 +44,6 @@ int	main( void )
 		me->unEquip(1);
 		me->unEquip(5);
 		delete tmp;
-		delete bob;
-		delete me;
-		delete src;
-	}
-	std::cout << std::endl << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl << std::endl;
-	{
-		IMateriaSource*	src = new MateriaSource();
-		src->learnMateria(new Ice());
-		src->learnMateria(new Cure());
-
-		AMateria* tmp1;
-		AMateria* tmp2;
-
-		ICharacter*	me = new Character("me");
-		ICharacter*	bob = new Character("bob");
-		tmp1 = src->createMateria("ice");
-		tmp2 = src->createMateria("cure");
-		me->equip(tmp1);
-		me->equip(tmp2);
-		me->equip(tmp1);
-		me->equip(tmp2);
-		me->equip(tmp1);
-		me->use(0, *bob);
-		bob->use(0, *me);
-		me->use(1, *bob);
-		me->use(5, *bob);
-		me->unEquip(4);
-		me->unEquip(7);
-		delete tmp1;
-		delete tmp2;
 		delete bob;
 		delete me;
 		delete src;
