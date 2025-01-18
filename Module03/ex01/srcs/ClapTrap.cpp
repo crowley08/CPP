@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:43:33 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/11 09:37:29 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/18 09:18:29 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,10 @@ void	ClapTrap::beRepaired( unsigned int amount )
 	}
 	int	tmp = this->getHitPoint() + amount;
 	if (tmp > 100)
+	{
 		this->_hitPoints = 100;
+		return ;
+	}
 	this->_hitPoints += amount;
 	std::cout << "Claptrap " << this->getName() << " got " << amount << " hitpoint(s)!"<< std::endl;
 	this->_energyPoints--;
