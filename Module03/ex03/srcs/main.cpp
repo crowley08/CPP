@@ -6,7 +6,7 @@
 /*   By: saandria <saandria@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 09:44:09 by saandria          #+#    #+#             */
-/*   Updated: 2025/01/11 10:28:03 by saandria         ###   ########.fr       */
+/*   Updated: 2025/01/18 13:39:54 by saandria         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ int	main( void )
 	{
 		DiamondTrap	trap( "fana" );
 
+		std::cout << "HitPoints: " << trap.getHitPoint() << std::endl;
+		std::cout << "EnergyPoints: " << trap.getEnergyPoint() << std::endl;
+		std::cout << "AttackDamage: " << trap.getAttackDamage() << std::endl;
 		trap.attack( "Sanda" );
 		trap.highFiveGuys();
 		trap.whoAmI();
